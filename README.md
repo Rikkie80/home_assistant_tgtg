@@ -117,7 +117,7 @@ filter:
               'type': "custom:multiple-entity-row",
               'unit': false,
               'secondary_info': as_timestamp(pickup_start) | timestamp_custom('Pickup on %d-%m between %H:%M and ', true) + as_timestamp(state_attr(entity_id, 'pickup_end')) | timestamp_custom('%H:%M, € ', true) + state_attr(entity_id, 'item_price')[:-3],
-              'image': state_attr(entity_id, 'logo_url'),
+              'image': state_attr(state.entity_id, 'logo_url'),
               'tap_action': {
                 'action': 'url',
                 'url_path': state_attr(entity_id, 'item_url')
